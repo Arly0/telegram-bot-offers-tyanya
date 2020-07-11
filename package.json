@@ -1,0 +1,11 @@
+{
+  "name": "music_pics_bot",
+  "version": "1.0.0",
+  "description": "bot for offers",
+  "main": "index.js",
+  "author": "Arly0",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.50.0"
+  }
+}
