@@ -1,6 +1,7 @@
 const TelBot = require('node-telegram-bot-api');
 const tmp = require('./settings.js');
 const TOKEN = tmp.token;
+const ADMIN = tmp.admin;
 const bot = new TelBot(TOKEN, {polling: true});
 
 bot.onText(/\/info/, msg => {
@@ -30,11 +31,11 @@ bot.onText(/\/new_offer/, msg => {
         }
         const fileID = (audioFlag) ? msg.audio.file_id : msg.photo[msg.photo.length - 1].file_id;
         if (audioFlag) {
-            bot.sendAudio('405197631', fileID, {
+            bot.sendAudio(ADMIN, fileID, {
                 caption: `От юзера: ${msg.from.username} в ${msg.date}`
             });
         } else {
-            bot.sendPhoto('405197631', fileID, {
+            bot.sendPhoto(ADMIN, fileID, {
                 caption: `От юзера: ${msg.from.username} в ${msg.date}`
             });
         }
